@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stories Of The Frame</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Stories Of The Frame</a>
+      <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="Frame.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="serives.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
+      <source src="vid/VID-20250129-WA0007.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content" id="heroContent">
+      <h1 class="hero-title">Stories Of The Frame</h1>
+      <p class="hero-subtitle">Fine Art Wedding & Lifestyle Photography</p>
+      <a href="contact.html" class="hero-cta">
+        Book Now <i class="fas fa-camera"></i>
+      </a>
+    </div>
+    <div class="scroll-indicator">
+      <div class="focus-box"></div>
+      <span>Scroll</span>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="section">
+      <div class="intro-card reveal">
+        <p>
+          At <strong>Stories of the Frame</strong>, photography is not just about clicking pictures.
+          It is about preserving real emotions, honest connections, and unforgettable celebrations in a luxury visual style.
+          Every frame is crafted with care so your memories stay cinematic and timeless.
+        </p>
+      </div>
+
+      <h2 class="section-title reveal">Featured Captures</h2>
+      <div class="slider-section reveal">
+        <div class="slider-container">
+          <div class="slider" id="slider">
+            <div class="slide"><img src="photo/wedding.jpeg" alt="Wedding" /></div>
+            <div class="slide"><img src="photo/wedding11.jpeg" alt="Wedding" /></div>
+            <div class="slide"><img src="photo/wedding3.jpeg" alt="Wedding" /></div>
+            <div class="slide"><img src="prewedding/pr.jpeg" alt="Prewedding" /></div>
+            <div class="slide"><img src="engagement/engg7.jpeg" alt="Engagement" /></div>
+            <div class="slide"><img src="photo/wedding4.jpeg" alt="Wedding" /></div>
+          </div>
+          <button class="slider-arrow prev" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+          <button class="slider-arrow next" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+          <div class="slider-nav" id="sliderNav"></div>
+        </div>
+      </div>
+
+      <h2 class="section-title reveal">You May Also Like</h2>
+      <div class="image-grid reveal">
+        <div class="grid-item" onclick="openLightbox('photo/wedding2.jpeg')">
+          <img src="photo/wedding2.jpeg" alt="Wedding" loading="lazy" />
+          <div class="grid-item-overlay"><span>Wedding</span></div>
+        </div>
+        <div class="grid-item" onclick="openLightbox('photo/engg2.jpeg')">
+          <img src="photo/engg2.jpeg" alt="Engagement" loading="lazy" />
+          <div class="grid-item-overlay"><span>Engagement</span></div>
+        </div>
+        <div class="grid-item" onclick="openLightbox('photo/engg.jpeg')">
+          <img src="photo/engg.jpeg" alt="Engagement" loading="lazy" />
+          <div class="grid-item-overlay"><span>Engagement</span></div>
+        </div>
+        <div class="grid-item" onclick="openLightbox('prewedding/WhatsApp Image 2026-02-18 at 20.42.50.jpeg')">
+          <img src="prewedding/WhatsApp Image 2026-02-18 at 20.42.50.jpeg" alt="Prewedding" loading="lazy" />
+          <div class="grid-item-overlay"><span>Prewedding</span></div>
+        </div>
+        <div class="grid-item" onclick="openLightbox('photo/prewedding2.jpeg')">
+          <img src="photo/prewedding2.jpeg" alt="Prewedding" loading="lazy" />
+          <div class="grid-item-overlay"><span>Prewedding</span></div>
+        </div>
+        <div class="grid-item" onclick="openLightbox('prewedding/WhatsApp Image 2026-02-18 at 20.42.52.jpeg')">
+          <img src="prewedding/WhatsApp Image 2026-02-18 at 20.42.52.jpeg" alt="Prewedding" loading="lazy" />
+          <div class="grid-item-overlay"><span>Prewedding</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+      <img id="lightboxImg" src="" alt="Preview" />
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <h2>Thank You for Visiting</h2>
+    <p>Let's create beautiful memories together</p>
+    <a href="contact.html" class="cta-btn">Contact Us</a>
+    <p class="copyright">&copy; 2026 Stories of the Frame. All Rights Reserved. | Created by Aditya Kulkarni</p>
+  </footer>
+
+  <script>
+    // Menu Toggle
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+      document.getElementById('menuToggle').classList.toggle('active');
+    }
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('active');
+        document.getElementById('menuToggle').classList.remove('active');
+      });
+    });
+
+    // Scroll effects
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      const progress = document.getElementById('scrollProgress');
+      const heroVideo = document.getElementById('heroVideo');
+      const heroContent = document.getElementById('heroContent');
+      const scrolled = window.scrollY;
+      
+      // Navbar background
+      if (window.scrollY > 50) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+      
+      // Progress bar
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (scrollTop / docHeight) * 100 + '%';
+      
+      // Parallax effect on hero
+      if (heroVideo && scrolled < window.innerHeight) {
+        heroVideo.style.transform = `scale(1.1) translateY(${scrolled * 0.3}px)`;
+        heroContent.style.transform = `translateY(${scrolled * 0.2}px)`;
+      }
+    });
+
+    // Slider functionality
+    const slider = document.getElementById('slider');
+    const slides = slider.querySelectorAll('.slide');
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    function updateSlider() {
+      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+      updateDots();
+    }
+
+    function nextSlide() { 
+      currentSlide = (currentSlide + 1) % totalSlides; 
+      updateSlider(); 
+    }
+    
+    function prevSlide() { 
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; 
+      updateSlider(); 
+    }
+    
+    // Auto slide every 9 seconds
+    setInterval(nextSlide, 9000);
+
+    // Create slider dots
+    const sliderNav = document.getElementById('sliderNav');
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      dot.onclick = () => { currentSlide = i; updateSlider(); };
+      sliderNav.appendChild(dot);
+    }
+
+    function updateDots() {
+      sliderNav.querySelectorAll('.slider-dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+    }
+
+    // Lightbox
+    function openLightbox(src) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(event) {
+      if (!event || event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', (e) => { 
+      if (e.key === 'Escape') closeLightbox(); 
+    });
+
+    // Reveal animations on scroll
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('in-view');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>

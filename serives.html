@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stories Of The Frame - Services</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Stories Of The Frame</a>
+      <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Frame.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="serives.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <header class="page-header">
+    <video autoplay muted loop playsinline class="page-header-video" id="pageVideo">
+      <source src="vid/VID-20250129-WA0007.mp4" type="video/mp4" />
+    </video>
+    <div class="page-header-overlay"></div>
+    <div class="page-header-content">
+      <h1>Our Services</h1>
+      <p>Professional photography for every occasion</p>
+    </div>
+  </header>
+  
+  <main>
+    <section class="section">
+      <h2 class="section-title reveal">What We Offer</h2>
+      <div class="services-grid">
+        <a href="Frame.html" class="service-card reveal">
+          <div class="service-card-image"><img src="photo/wedding.jpeg" alt="Wedding" loading="lazy" /></div>
+          <div class="service-card-content"><h3 class="service-card-title">Wedding Photography</h3><p class="service-card-desc">Capturing your special day</p></div>
+        </a>
+        <a href="Frame.html" class="service-card reveal">
+          <div class="service-card-image"><img src="photo/engg.jpeg" alt="Engagement" loading="lazy" /></div>
+          <div class="service-card-content"><h3 class="service-card-title">Engagement Shoot</h3><p class="service-card-desc">Beautiful pre-wedding moments</p></div>
+        </a>
+        <a href="Frame.html" class="service-card reveal">
+          <div class="service-card-image"><img src="photo/prewedding.jpeg" alt="Prewedding" loading="lazy" /></div>
+          <div class="service-card-content"><h3 class="service-card-title">Prewedding</h3><p class="service-card-desc">Romantic couple sessions</p></div>
+        </a>
+        <a href="Frame.html" class="service-card reveal">
+          <div class="service-card-image"><img src="baby/baby.jpeg" alt="Baby" loading="lazy" /></div>
+          <div class="service-card-content"><h3 class="service-card-title">Baby Photography</h3><p class="service-card-desc">Precious little moments</p></div>
+        </a>
+        <a href="Frame.html" class="service-card reveal">
+          <div class="service-card-image"><img src="product/jewellery/jewellery.jpeg" alt="Jewellery" loading="lazy" /></div>
+          <div class="service-card-content"><h3 class="service-card-title">Jewellery Photography</h3><p class="service-card-desc">Product showcase</p></div>
+        </a>
+        <a href="Frame.html" class="service-card reveal">
+          <div class="service-card-image"><img src="product/food/food.jpeg" alt="Food" loading="lazy" /></div>
+          <div class="service-card-content"><h3 class="service-card-title">Food Photography</h3><p class="service-card-desc">Appetizing visuals</p></div>
+        </a>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <h2>Thank You for Visiting</h2>
+    <p>Let's create beautiful memories together</p>
+    <a href="contact.html" class="cta-btn">Contact Us</a>
+    <p class="copyright">&copy; 2026 Stories of the Frame. All Rights Reserved. | Created by Aditya Kulkarni</p>
+  </footer>
+  
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+      document.getElementById('menuToggle').classList.toggle('active');
+    }
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('active');
+        document.getElementById('menuToggle').classList.remove('active');
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      const progress = document.getElementById('scrollProgress');
+      
+      if (window.scrollY > 50) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+      
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (scrollTop / docHeight) * 100 + '%';
+    });
+
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('in-view');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>

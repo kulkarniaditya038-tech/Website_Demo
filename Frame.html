@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stories Of The Frame - Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Stories Of The Frame</a>
+      <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Frame.html" class="active">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="serives.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <header class="page-header">
+    <video autoplay muted loop playsinline class="page-header-video" id="pageVideo">
+      <source src="vid/VID-20250129-WA0007.mp4" type="video/mp4" />
+    </video>
+    <div class="page-header-overlay"></div>
+    <div class="page-header-content">
+      <h1>Our Gallery</h1>
+      <p>Capturing life's most beautiful moments</p>
+    </div>
+  </header>
+  
+  <main>
+    <section class="section">
+      <div class="section-switcher reveal">
+        <button class="switch-btn active" onclick="showSection('photos')">Photos</button>
+        <button class="switch-btn" onclick="showSection('videos')">Videos</button>
+      </div>
+      
+      <div id="photos">
+        <h2 class="section-title reveal">Wedding Photos</h2>
+        <div class="gallery reveal">
+          <div class="gallery-item" onclick="openLightbox('photo/wedding.jpeg')"><img src="photo/wedding.jpeg" alt="Wedding" loading="lazy" /><div class="gallery-item-overlay"><i class="fas fa-expand"></i></div></div>
+          <div class="gallery-item" onclick="openLightbox('photo/wedding2.jpeg')"><img src="photo/wedding2.jpeg" alt="Wedding" loading="lazy" /><div class="gallery-item-overlay"><i class="fas fa-expand"></i></div></div>
+          <div class="gallery-item" onclick="openLightbox('photo/wedding9.jpeg')"><img src="photo/wedding9.jpeg" alt="Wedding" loading="lazy" /><div class="gallery-item-overlay"><i class="fas fa-expand"></i></div></div>
+          <div class="gallery-item" onclick="openLightbox('photo/wedding4.jpeg')"><img src="photo/wedding4.jpeg" alt="Wedding" loading="lazy" /><div class="gallery-item-overlay"><i class="fas fa-expand"></i></div></div>
+        </div>
+        
+        <h2 class="section-title reveal">Engagement Photos</h2>
+        <div class="gallery reveal">
+          <div class="gallery-item" onclick="openLightbox('engagement/engg3.jpeg')"><img src="engagement/engg3.jpeg" alt="Engagement" loading="lazy" /><div class="gallery-item-overlay"><i class="fas fa-expand"></i></div></div>
+          <div class="gallery-item" onclick="openLightbox('photo/engg2.jpeg')"><img src="photo/engg2.jpeg" alt="Engagement" loading="lazy" /><div class="gallery-item-overlay"><i class="fas fa-expand"></i></div></div>
+          <div class="gallery-item" onclick="openLightbox('photo/engg.jpeg')"><img src="photo/engg.jpeg" alt="Engagement" loading="lazy" /><div class="gallery-item-overlay"><i class="fas fa-expand"></i></div></div>
+        </div>
+        
+        <h2 class="section-title reveal">Prewedding Photos</h2>
+        <div class="gallery reveal">
+          <div class="gallery-item" onclick="openLightbox('photo/prewedding.jpeg')"><img src="photo/prewedding.jpeg" alt="Prewedding" loading="lazy" /><div class="gallery-item-overlay"><i class="fas fa-expand"></i></div></div>
+          <div class="gallery-item" onclick="openLightbox('photo/prewedding1.jpeg')"><img src="photo/prewedding1.jpeg" alt="Prewedding" loading="lazy" /><div class="gallery-item-overlay"><i class="fas fa-expand"></i></div></div>
+          <div class="gallery-item" onclick="openLightbox('photo/prewedding2.jpeg')"><img src="photo/prewedding2.jpeg" alt="Prewedding" loading="lazy" /><div class="gallery-item-overlay"><i class="fas fa-expand"></i></div></div>
+        </div>
+        
+        <h2 class="section-title reveal">Baby Photos</h2>
+        <div class="gallery reveal">
+          <div class="gallery-item" onclick="openLightbox('baby/baby11.jpeg')"><img src="baby/baby11.jpeg" alt="Baby" loading="lazy" /><div class="gallery-item-overlay"><i class="fas fa-expand"></i></div></div>
+          <div class="gallery-item" onclick="openLightbox('baby/baby.jpeg')"><img src="baby/baby.jpeg" alt="Baby" loading="lazy" /><div class="gallery-item-overlay"><i class="fas fa-expand"></i></div></div>
+          <div class="gallery-item" onclick="openLightbox('baby/baby1.jpeg')"><img src="baby/baby1.jpeg" alt="Baby" loading="lazy" /><div class="gallery-item-overlay"><i class="fas fa-expand"></i></div></div>
+        </div>
+        
+        <h2 class="section-title reveal">Jewellery Photos</h2>
+        <div class="gallery reveal">
+          <div class="gallery-item" onclick="openLightbox('product/jewellery/jewellery.jpeg')"><img src="product/jewellery/jewellery.jpeg" alt="Jewellery" loading="lazy" /><div class="gallery-item-overlay"><i class="fas fa-expand"></i></div></div>
+          <div class="gallery-item" onclick="openLightbox('product/jewellery/j1.jpeg')"><img src="product/jewellery/j1.jpeg" alt="Jewellery" loading="lazy" /><div class="gallery-item-overlay"><i class="fas fa-expand"></i></div></div>
+        </div>
+      </div>
+      
+      <div id="videos" style="display: none;">
+        <h2 class="section-title reveal">Cinematic Videos</h2>
+        <div class="video-grid reveal">
+          <div class="video-item"><video controls><source src="vid/vid1.mp4" type="video/mp4" /></video></div>
+          <div class="video-item"><video controls><source src="vid/vid2.mp4" type="video/mp4" /></video></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+      <img id="lightboxImg" src="" alt="Preview" />
+    </div>
+  </div>
+  
+  <footer>
+    <h2>Thank You for Visiting</h2>
+    <p>Let's create beautiful memories together</p>
+    <a href="contact.html" class="cta-btn">Contact Us</a>
+    <p class="copyright">&copy; 2026 Stories of the Frame. All Rights Reserved. | Created by Aditya Kulkarni</p>
+  </footer>
+  
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+      document.getElementById('menuToggle').classList.toggle('active');
+    }
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('active');
+        document.getElementById('menuToggle').classList.remove('active');
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      const progress = document.getElementById('scrollProgress');
+      
+      if (window.scrollY > 50) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+      
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (scrollTop / docHeight) * 100 + '%';
+    });
+
+    function showSection(section) {
+      const photos = document.getElementById('photos');
+      const videos = document.getElementById('videos');
+      const buttons = document.querySelectorAll('.switch-btn');
+      
+      buttons.forEach(btn => btn.classList.remove('active'));
+      
+      if (section === 'photos') {
+        photos.style.display = 'block';
+        videos.style.display = 'none';
+        buttons[0].classList.add('active');
+      } else {
+        photos.style.display = 'none';
+        videos.style.display = 'block';
+        buttons[1].classList.add('active');
+      }
+      
+      document.querySelectorAll('#videos video').forEach(v => v.pause());
+    }
+
+    function openLightbox(src) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(event) {
+      if (!event || event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('in-view');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    document.querySelectorAll('video').forEach(video => {
+      video.addEventListener('play', () => {
+        document.querySelectorAll('video').forEach(v => {
+          if (v !== video) v.pause();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
